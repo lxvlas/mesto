@@ -1,4 +1,9 @@
 .popup__text_name {
-  margin-top: 54px;
-  margin-bottom: 13px;
+  margin-top: 41px;
+}
+
+@media all and (max-width: 635px) {
+  .popup__text_name {
+    margin-top: 62px;
+  }
 }
