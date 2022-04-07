@@ -1,5 +1,6 @@
 .popup__text {
   max-width: 358px;
+  min-height: 14px;
   margin: 0;
   padding: 13px 4px;
   border: 0;
