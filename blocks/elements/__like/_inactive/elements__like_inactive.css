@@ -1,0 +1,7 @@
+.elements__like_inactive {
+  width: 22px;
+}
+
+.elements__like_inactive:hover {
+  opacity: 0.5;
+}
