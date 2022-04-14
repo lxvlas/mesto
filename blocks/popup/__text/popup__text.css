@@ -1,6 +1,5 @@
 .popup__text {
-  max-width: 358px;
-  min-height: 14px;
+  width: 358px;
   margin: 0;
   padding: 13px 4px;
   border: 0;
@@ -9,4 +8,15 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.21;
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+}
+
+.popup__text:first-of-type {
+  margin-bottom: 17px;
+}
+
+@media all and (max-width: 635px) {
+  .popup__text {
+    width: 238px;
+  }
 }
