@@ -2,7 +2,6 @@
 @import url(../fonts/font.css);
 @import url(../blocks/page/page.css);
 
-
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 
@@ -14,7 +13,6 @@
 @import url(../blocks/profile/__job/profile__job.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
-
 
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__element/elements__element.css);
