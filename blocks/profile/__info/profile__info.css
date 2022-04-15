@@ -1,4 +1,19 @@
 .profile__info {
+  max-width: 336px;
   display: flex;
   flex-direction: column;
+}
+
+@media all and (max-width: 720px) {
+  .profile__info {
+    margin-right: 20px;
+  }
+}
+
+@media all and (max-width: 635px) {
+  .profile__info {
+    max-width: 282px;
+    align-items: center;
+    margin-right: 20px;
+  }
 }
