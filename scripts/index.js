@@ -13,13 +13,13 @@ const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 
 const placeEditBtn = document.querySelector('.profile__add-button');
-const placeEditWindow = document.querySelector('.popup__place');
+const placeEditWindow = document.querySelector('.popup_place');
 const placeCloseBtn = document.querySelector('.popup__close_type_place');
 const placeFormElement = document.querySelector('.popup__content_edit_place');
 const placeNameInput = placeFormElement.querySelector('.popup__text_type_place'); 
 const placeUrlInput = placeFormElement.querySelector('.popup__text_type_url');
 
-const imageWindow = document.querySelector('.popup__image');
+const imageWindow = document.querySelector('.popup_image');
 const imageCloseBtn = document.querySelector('.popup__close_type_image');
 
 const initialCards = [
