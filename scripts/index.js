@@ -4,7 +4,7 @@ const popupImage = document.querySelector('.popup__image-item');
 const popupImageTitle = document.querySelector('.popup__image-title');
 
 const profileEditBtn = document.querySelector('.profile__edit-button');
-const profileEditWindow = document.querySelector('.popup__profile');
+const profileEditWindow = document.querySelector('.popup_profile');
 const profileCloseBtn = document.querySelector('.popup__close_type_profile');
 const profileFormElement = document.querySelector('.popup__content_edit_profile');
 const profileNameInput = profileFormElement.querySelector('.popup__text_type_name'); 
