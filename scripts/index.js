@@ -6,11 +6,11 @@ const popupImageTitle = document.querySelector('.popup__image-title');
 const profileEditBtn = document.querySelector('.profile__edit-button');
 const profileEditWindow = document.querySelector('.popup__profile');
 const profileCloseBtn = document.querySelector('.popup__close_type_profile');
-let profileFormElement = document.querySelector('.popup__content_edit_profile');
-let profileNameInput = profileFormElement.querySelector('.popup__text_type_name'); 
-let profileJobInput = profileFormElement.querySelector('.popup__text_type_job');
-let profileName = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__job');
+const profileFormElement = document.querySelector('.popup__content_edit_profile');
+const profileNameInput = profileFormElement.querySelector('.popup__text_type_name'); 
+const profileJobInput = profileFormElement.querySelector('.popup__text_type_job');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
 
 const placeEditBtn = document.querySelector('.profile__add-button');
 const placeEditWindow = document.querySelector('.popup__place');
@@ -129,7 +129,7 @@ function handleAddCard(evt) {
   const element = getCards({ name: cardName, link: cardUrl });
   cardsContainer.prepend(element);
   changeCardWidth();
-  closePlaceEditWindow()
+  togglePlaceEditWindow();
   placeNameInput.value = "";
   placeUrlInput.value = "";
 }
