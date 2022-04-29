@@ -1,14 +1,5 @@
 .elements__like-button_active {
-  margin: 5px 1px;
-  padding: 0;
-  min-width: 22px;
-  height: 19px;
-  border: 0;
-  background-color: #fff;
   background-image: url(../../../../images/like-active.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
 }
 
 .elements__like-button_active:hover {

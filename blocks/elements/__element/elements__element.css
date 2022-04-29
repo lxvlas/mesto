@@ -2,4 +2,10 @@
   background: #ffffff;
   border-radius: 10px;
   position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.elements__element:hover {
+  transform: scale(1.01);
 }
