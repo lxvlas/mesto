@@ -3,8 +3,8 @@ const template = document.querySelector('.template').content;
 const popupImage = document.querySelector('.popup__image-item');
 const popupImageTitle = document.querySelector('.popup__image-title');
 
-const profileEditBtn = document.querySelector('.profile__edit-button');
 const profileEditWindow = document.querySelector('.popup_profile');
+const profileEditBtn = document.querySelector('.profile__edit-button');
 const profileCloseBtn = document.querySelector('.popup__close_type_profile');
 const profileFormElement = document.querySelector('.popup__content_edit_profile');
 const profileNameInput = profileFormElement.querySelector('.popup__text_type_name'); 
@@ -12,8 +12,8 @@ const profileJobInput = profileFormElement.querySelector('.popup__text_type_job'
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 
-const placeEditBtn = document.querySelector('.profile__add-button');
 const placeEditWindow = document.querySelector('.popup_place');
+const placeEditBtn = document.querySelector('.profile__add-button');
 const placeCloseBtn = document.querySelector('.popup__close_type_place');
 const placeFormElement = document.querySelector('.popup__content_edit_place');
 const placeNameInput = placeFormElement.querySelector('.popup__text_type_place'); 
@@ -71,15 +71,19 @@ function getCards(pic) {
   return cardsItem;
 }
 
-function toggleImageWindow() {
-  imageWindow.classList.toggle('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }
 
 function handleInsertCard(el) {
-  toggleImageWindow();
   popupImage.src = el.link;
   popupImageTitle.textContent = el.name;
   popupImage.alt = el.name;
+  openPopup(imageWindow);
 }
 
 function deleteCard(evt) {
@@ -93,32 +97,28 @@ function addLike(evt) {
   likeItem.classList.toggle('elements__like-button_active');
  }
 
-function toggleProfileEditWindow() {
+function handleEditProfile() {
   profileNameInput.value = profileName.textContent;
   profileJobInput.value = profileJob.textContent;
-  profileEditWindow.classList.toggle('popup_opened');
+  openPopup(profileEditWindow);
 }
 
 function profileFormSubmitHandler(evt) {
   evt.preventDefault(); 
   profileName.textContent = profileNameInput.value;
   profileJob.textContent = profileJobInput.value;
-  toggleProfileEditWindow();
+  closePopup(profileEditWindow);
 }
 
 function profileOnOverLayClick(event) {
-  if (event.target === document.querySelector('.popup__content_edit_profile')) {  
-    toggleProfileEditWindow();
+  if (event.target.classList.contains('popup__content')) {  
+     closePopup(profileEditWindow);
    }
 }
 
-function togglePlaceEditWindow() {
-  placeEditWindow.classList.toggle('popup_opened');
-}
-
 function placeOnOverLayClick(event) {
-  if (event.target === document.querySelector('.popup__content_edit_place')) {  
-    togglePlaceEditWindow();
+  if (event.target.classList.contains('popup__content')) {  
+    closePopup(placeEditWindow);
   }
 }
 
@@ -129,14 +129,14 @@ function handleAddCard(evt) {
   const element = getCards({ name: cardName, link: cardUrl });
   cardsContainer.prepend(element);
   changeCardWidth();
-  togglePlaceEditWindow();
+  closePopup(placeEditWindow);
   placeNameInput.value = "";
   placeUrlInput.value = "";
 }
 
 function imageOnOverLayClick(event) {
-  if (event.target === document.querySelector('.popup__content_type_image')) {  
-    toggleImageWindow();
+  if (event.target.classList.contains('popup__content')) {  
+    closePopup(imageWindow);
   }
 }
 
@@ -152,14 +152,14 @@ function changeCardWidth() {
 }
 
 profileFormElement.addEventListener('submit', profileFormSubmitHandler);
-profileEditBtn.addEventListener('click', toggleProfileEditWindow);
-profileCloseBtn.addEventListener('click', toggleProfileEditWindow);
+profileEditBtn.addEventListener('click', handleEditProfile);
+profileCloseBtn.addEventListener('click', () => closePopup(profileEditWindow));
 profileEditWindow.addEventListener('click', profileOnOverLayClick);
 
 placeFormElement.addEventListener('submit', handleAddCard);
-placeEditBtn.addEventListener('click', togglePlaceEditWindow);
-placeCloseBtn.addEventListener('click', togglePlaceEditWindow);
+placeEditBtn.addEventListener('click', () => openPopup(placeEditWindow));
+placeCloseBtn.addEventListener('click', () => closePopup(placeEditWindow));
 placeEditWindow.addEventListener('click', placeOnOverLayClick);
 
-imageCloseBtn.addEventListener('click', toggleImageWindow);
+imageCloseBtn.addEventListener('click', () => closePopup(imageWindow));
 imageWindow.addEventListener('click', imageOnOverLayClick);
