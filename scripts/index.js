@@ -118,7 +118,7 @@ function profileFormSubmitHandler(evt) {
 }
 
 function resetPlaceInput() {
-  document.querySelector('.popup__form_type_place').reset();
+  document.querySelector('#placeForm').reset();
 }
 
 function handleAddCard(evt) {
