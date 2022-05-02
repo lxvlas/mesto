@@ -3,3 +3,7 @@
   border-radius: 10px;
   position: relative;
 }
+
+.elements__element:only-of-type {
+  max-width: 431px;
+}

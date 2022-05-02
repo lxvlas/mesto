@@ -79,6 +79,10 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 }
 
+// function togglePopup(popup) {
+//   popup.classList.toggle('popup_opened');
+// }
+
 function handleInsertCard(el) {
   popupImage.src = el.link;
   popupImageTitle.textContent = el.name;
@@ -89,7 +93,6 @@ function handleInsertCard(el) {
 function deleteCard(evt) {
   const item = evt.target.closest(".elements__element");
   item.remove();
-  changeCardWidth();
 }
 
 function addLike(evt) {
@@ -97,9 +100,13 @@ function addLike(evt) {
   likeItem.classList.toggle('elements__like-button_active');
  }
 
-function handleEditProfile() {
+function enterProfileInitialValues() {
   profileNameInput.value = profileName.textContent;
   profileJobInput.value = profileJob.textContent;
+}
+
+function handleEditProfile() {
+  enterProfileInitialValues();
   openPopup(profileEditWindow);
 }
 
@@ -110,16 +117,8 @@ function profileFormSubmitHandler(evt) {
   closePopup(profileEditWindow);
 }
 
-function profileOnOverLayClick(event) {
-  if (event.target.classList.contains('popup__content')) {  
-     closePopup(profileEditWindow);
-   }
-}
-
-function placeOnOverLayClick(event) {
-  if (event.target.classList.contains('popup__content')) {  
-    closePopup(placeEditWindow);
-  }
+function resetPlaceInput() {
+  document.querySelector('.popup__form_type_place').reset();
 }
 
 function handleAddCard(evt) {
@@ -128,38 +127,16 @@ function handleAddCard(evt) {
   const cardUrl = placeUrlInput.value;
   const element = getCards({ name: cardName, link: cardUrl });
   cardsContainer.prepend(element);
-  changeCardWidth();
   closePopup(placeEditWindow);
-  placeNameInput.value = "";
-  placeUrlInput.value = "";
+  resetPlaceInput();
 }
 
-function imageOnOverLayClick(event) {
-  if (event.target.classList.contains('popup__content')) {  
-    closePopup(imageWindow);
-  }
-}
-
-// Функиця для предотвращения излишнего растягивания в ширину единственной карточки
-function changeCardWidth() {
-  const cardsNumber = (Array.from(document.querySelectorAll('.elements__element'))).length;
-  if (cardsNumber === 1) {
-    cardsContainer.className = "elements__single";
-  }
-  else {
-    cardsContainer.className = "elements";
-  }
-}
-
-profileFormElement.addEventListener('submit', profileFormSubmitHandler);
 profileEditBtn.addEventListener('click', handleEditProfile);
+profileFormElement.addEventListener('submit', profileFormSubmitHandler);
 profileCloseBtn.addEventListener('click', () => closePopup(profileEditWindow));
-profileEditWindow.addEventListener('click', profileOnOverLayClick);
 
-placeFormElement.addEventListener('submit', handleAddCard);
 placeEditBtn.addEventListener('click', () => openPopup(placeEditWindow));
+placeFormElement.addEventListener('submit', handleAddCard);
 placeCloseBtn.addEventListener('click', () => closePopup(placeEditWindow));
-placeEditWindow.addEventListener('click', placeOnOverLayClick);
 
 imageCloseBtn.addEventListener('click', () => closePopup(imageWindow));
-imageWindow.addEventListener('click', imageOnOverLayClick);
