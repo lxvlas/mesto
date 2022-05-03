@@ -6,7 +6,7 @@ const popupImageTitle = document.querySelector('.popup__image-title');
 const profileEditWindow = document.querySelector('.popup_profile');
 const profileEditBtn = document.querySelector('.profile__edit-button');
 const profileCloseBtn = document.querySelector('.popup__close_type_profile');
-const profileFormElement = document.querySelector('.popup__content_edit_profile');
+const profileFormElement = document.querySelector('.popup__form_edit_profile');
 const profileNameInput = profileFormElement.querySelector('.popup__text_type_name'); 
 const profileJobInput = profileFormElement.querySelector('.popup__text_type_job');
 const profileName = document.querySelector('.profile__name');
@@ -15,7 +15,7 @@ const profileJob = document.querySelector('.profile__job');
 const placeEditWindow = document.querySelector('.popup_place');
 const placeEditBtn = document.querySelector('.profile__add-button');
 const placeCloseBtn = document.querySelector('.popup__close_type_place');
-const placeFormElement = document.querySelector('.popup__content_edit_place');
+const placeFormElement = document.querySelector('.popup__form_edit_place');
 const placeNameInput = placeFormElement.querySelector('.popup__text_type_place'); 
 const placeUrlInput = placeFormElement.querySelector('.popup__text_type_url');
 
