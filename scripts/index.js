@@ -117,10 +117,6 @@ function profileFormSubmitHandler(evt) {
   closePopup(profileEditWindow);
 }
 
-function resetPlaceInput() {
-  document.querySelector('#placeForm').reset();
-}
-
 function handleAddCard(evt) {
   evt.preventDefault();
   const cardName = placeNameInput.value;
@@ -128,7 +124,7 @@ function handleAddCard(evt) {
   const element = getCards({ name: cardName, link: cardUrl });
   cardsContainer.prepend(element);
   closePopup(placeEditWindow);
-  resetPlaceInput();
+  placeFormElement.reset();
 }
 
 profileEditBtn.addEventListener('click', handleEditProfile);

@@ -35,13 +35,16 @@
     </footer>
 
     <div class="popup popup_profile">
-      <div class="popup__content popup__content_edit_profile">
+      <div class="popup__content">
         <div class="popup__container">
           <button
             type="button"
             class="popup__close popup__close_type_profile"
           ></button>
-          <form name="profile-edit-form" class="popup__form">
+          <form
+            name="profile-edit-form"
+            class="popup__form popup__content_edit_profile"
+          >
             <h3 class="popup__title">Редактировать профиль</h3>
             <input
               type="text"
@@ -66,13 +69,16 @@
     </div>
 
     <div class="popup popup_place">
-      <div class="popup__content popup__content_edit_place">
+      <div class="popup__content">
         <div class="popup__container">
           <button
             type="button"
             class="popup__close popup__close_type_place"
           ></button>
-          <form name="picture-add-form" class="popup__form" id="placeForm">
+          <form
+            name="picture-add-form"
+            class="popup__form popup__content_edit_place"
+          >
             <h3 class="popup__title">Новое место</h3>
             <input
               type="text"
