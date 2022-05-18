@@ -39,30 +39,43 @@
         <div class="popup__container">
           <button
             type="button"
-            class="popup__close popup__close_type_profile"
+            class="popup__close-button"
           ></button>
           <form
             name="profile-edit-form"
             class="popup__form popup__form_edit_profile"
+            novalidate
           >
             <h3 class="popup__title">Редактировать профиль</h3>
-            <input
-              type="text"
-              name="name-edit"
-              required
-              placeholder="Имя"
-              value=""
-              class="popup__text popup__text_type_name"
-            />
-            <input
-              type="text"
-              name="job-edit"
-              required
-              placeholder="Род деятельности"
-              value=""
-              class="popup__text popup__text_type_job"
-            />
-            <button type="submit" class="popup__save">Сохранить</button>
+            <label class="popup__form_field">
+              <input
+                type="text"
+                name="name-edit"
+                required
+                placeholder="Имя"
+                value=""
+                class="popup__text popup__text_type_name popup__input"
+                id="name-input"
+                minlength="2"
+                maxlength="40"
+              />
+              <span class="name-input-error"></span>
+            </label>
+            <label class="popup__form_field">
+              <input
+                type="text"
+                name="job-edit"
+                required
+                placeholder="Род деятельности"
+                value=""
+                class="popup__text popup__text_type_job popup__input"
+                id="job-input"
+                minlength="2"
+                maxlength="200"
+              />
+              <span class="job-input-error"></span>
+            </label>
+            <button type="submit" class="popup__button">Сохранить</button>
           </form>
         </div>
       </div>
@@ -73,41 +86,50 @@
         <div class="popup__container">
           <button
             type="button"
-            class="popup__close popup__close_type_place"
+            class="popup__close-button"
           ></button>
           <form
             name="picture-add-form"
             class="popup__form popup__form_edit_place"
+            novalidate
           >
             <h3 class="popup__title">Новое место</h3>
-            <input
-              type="text"
-              name="place-name"
-              required
-              placeholder="Название"
-              value=""
-              class="popup__text popup__text_type_place"
-            />
-            <input
-              type="url"
-              name="image-url"
-              required
-              placeholder="Ссылка на картинку"
-              value=""
-              class="popup__text popup__text_type_url"
-            />
-            <button type="submit" class="popup__save">Создать</button>
+            <label class="popup__form_field">
+              <input
+                type="text"
+                name="place-name"
+                required
+                placeholder="Название"
+                value=""
+                class="popup__text popup__text_type_place popup__input"
+                id="place-input"
+              />
+              <span class="place-input-error"></span>
+            </label>
+            <label class="popup__form_field">
+              <input
+                type="url"
+                name="image-url"
+                required
+                placeholder="Ссылка на картинку"
+                value=""
+                class="popup__text popup__text_type_url popup__input"
+                id="url-input"
+              />
+              <span class="url-input-error"></span>
+            </label>
+            <button type="submit" class="popup__button">Создать</button>
           </form>
         </div>
       </div>
     </div>
 
     <div class="popup popup_image">
-      <div class="popup__content popup__content_type_image">
+      <div class="popup__content">
         <div class="popup__image-container">
           <button
             type="button"
-            class="popup__close popup__close_type_image"
+            class="popup__close-button"
           ></button>
           <img src="#" alt="Название картинки" class="popup__image-item" />
           <h3 class="popup__image-title"></h3>
@@ -129,7 +151,7 @@
         </div>
       </li>
     </template>
-
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
